@@ -1,3 +1,19 @@
 .navbar {
-    color: white;
+    height: 100px;
+}
+.pengu {
+    width: 80px;
+    height: 100%;
+}
+.hero {
+    height: 350px;
+    background-image: url(https://images.unsplash.com/photo-1543523195-e0613799d7ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjB8MzgxNjE0MXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+
+}
+footer {
+    background-color: aqua;
+    height: 100px;
 }
