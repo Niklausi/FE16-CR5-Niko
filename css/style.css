@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
 .navbar {
     height: 100px;
 }
@@ -6,14 +7,38 @@
     height: 100%;
 }
 .hero {
-    height: 350px;
-    background-image: url(https://images.unsplash.com/photo-1543523195-e0613799d7ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjB8MzgxNjE0MXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60);
+    height: 450px;
+    background-image: url(https://images.unsplash.com/photo-1581171383994-afd540b6a4da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2F0JTIwYW5kJTIwZG9nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center top;
+    background-position: center;
 
 }
+.gettoknow {
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    font-family: 'Happy Monkey', cursive;
+}
+.icons {
+    background-color: rgb(153,192,212);
+    height: 60px;
+}
+.icons img {
+    width: 20px;
+}
+.icons li {
+    list-style: none;
+    padding: 10px;
+    
+    
+}
+.copyr {
+    background-color: rgb(75,149,186);
+    height: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 footer {
-    background-color: aqua;
-    height: 100px;
+    width: 100%;
+    height: 80px;
 }
