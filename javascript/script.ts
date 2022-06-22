@@ -158,8 +158,3 @@ function vacChan(){
 //     (document.getElementById("animalcont") as HTMLElement).innerHTML += dog.displayInfo()
 // }
 
-// new Dog(1, "Rowdy", "male","medium", 3, "<i class='bi bi-shield-fill-x'></i>", "dog1.jpg", "cooldog", false);
-// new Dog(2, "Fred", "male","small", 1, "<i class='bi bi-shield-check'></i>", "dog2.jpg", "housedog", true);
-// new Dog(3, "Jasmin", "female","large", 2, "<i class='bi bi-shield-fill-x'></i>", "dog3.jpg", "pug", false);
-
-
