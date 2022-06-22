@@ -11,8 +11,8 @@ class Animal {
     }
     displayInfo() {
         return `
-        <div class="col-4 d-flex mb-3 mt-3 justify-content-center">
-        <div class="card" style="width:250px">
+        <div class="col-12 col-md-6 col-lg-4 d-flex mb-3 mt-3 justify-content-center">
+        <div class="card">
             <img class="card-img-top img-cover cardimage" src="${this.image}">
             <div class="card-body">
               <h4 class="card-title">Name: ${this.name}</h4>
@@ -20,16 +20,16 @@ class Animal {
               <p class="card-text">height: ${this.height}</p>
               <p class="card-text">Age: ${this.age}</p>
               <hr>
-              <button id="" onclick="vaccine()" class="btn-vaccine rounded" >Vaccine:${this.vaccine} </button>
+              <div class="divbtn"><button id="" class="btnVaccine" >Vaccine: ${this.vaccine}</button></div>
             </div>
           </div> 
       </div>`;
     }
 }
 let animal = [];
-new Animal("Bounce", "female", "tall", 7, true, "../animal images/hirsch.jpg");
-new Animal("Tod", "male", "small", 2, false, "../animal images/bird.jpg");
-new Animal("Frank", "male", "tall", 5, false, "../animal images/tiger.jpg");
+new Animal("Bounce", "female", "tall", 7, true, "./animalimages/hirsch.jpg");
+new Animal("Tod", "male", "small", 2, false, "./animalimages/bird.jpg");
+new Animal("Frank", "male", "tall", 5, false, "./animalimages/tiger.jpg");
 console.table(animal);
 class Cat extends Animal {
     constructor(name, gender, height, age, vaccine, image, breed, furcolor, urlbreed) {
@@ -41,8 +41,8 @@ class Cat extends Animal {
     }
     displayInfo() {
         return `
-        <div class="col-4 d-flex mb-3 mt-3 justify-content-center">
-        <div class="card" style="width:250px">
+        <div class="col-12 col-md-6 col-lg-4 d-flex mb-3 mt-3 justify-content-center">
+        <div class="card">
             <img class="card-img-top" src=" ${this.image}">
             <div class="card-body">
               <h4 class="card-title">Name: ${this.name}</h4>
@@ -53,16 +53,16 @@ class Cat extends Animal {
               <p class="card-text">Furcolor: ${this.furcolor}</p>
               <p class="card-text">Url: ${this.urlbreed}</p>
               <hr>
-              <button id="btn" onclick="vaccine()" class="btn-vaccine" >Vaccine: ${this.vaccine}</button>
+              <div class="divbtn"><button id="" class="btnVaccine" > ${this.vaccine}</button></div>
             </div>
           </div> 
       </div>`;
     }
 }
 let cats = [];
-new Cat("Minki", "male", "medium", 2, true, "../animal images/cat1.jpg", "siamese", "Cookie", "https://en.wikipedia.org/wiki/Cat");
-new Cat("Edward", "male", "medium", 3, false, "../animal images/coolcat.jpg", "Bengal", "Grey", "https://en.wikipedia.org/wiki/Cat");
-new Cat("Heidi", "female", "small", 4, true, "../animal images/cat2.jpg", "Kapuziner", "Brightbrown", "https://en.wikipedia.org/wiki/Cat");
+new Cat("Minki", "male", "medium", 2, true, "./animalimages/cat1.jpg", "siamese", "Cookie", "https://en.wikipedia.org/wiki/Cat");
+new Cat("Edward", "male", "medium", 3, false, "./animalimages/coolcat.jpg", "Bengal", "Grey", "https://en.wikipedia.org/wiki/Cat");
+new Cat("Heidi", "female", "small", 4, true, "./animalimages/cat2.jpg", "Kapuziner", "Brightbrown", "https://en.wikipedia.org/wiki/Cat");
 console.table(cats);
 class Dog extends Animal {
     constructor(name, gender, height, age, vaccine, image, breed, training) {
@@ -73,7 +73,7 @@ class Dog extends Animal {
     }
     displayInfo() {
         return `
-        <div class="col-4 d-flex mb-3 mt-3 justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4 d-flex mb-3 mt-3 justify-content-center">
         <div class="card">
             <img class="card-img-top" src="${this.image}">
             <div class="card-body">
@@ -81,7 +81,7 @@ class Dog extends Animal {
               <p class="card-text">Gender ${this.gender}</p>
               <p class="card-text">height ${this.height}</p>
               <p class="card-text">Age:${this.age}</p>
-              <button id="" onclick="vaccine" class="btn-vaccine" >Vaccine: ${this.vaccine}</button>
+              <div class="divbtn"><button class="btnVaccine" >Vaccine: ${this.vaccine}</button></div>
               <p class="card-text">Breed:${this.breed}</p>
               <p class="card-text">Training:${this.training}</p>
             </div>
@@ -90,47 +90,48 @@ class Dog extends Animal {
     }
 }
 let dogs = [];
-new Dog("Panther", "male", "medium", 3, true, "../animal images/dog1.jpg", "Terrier", "Yes");
-new Dog("Howdy", "male", "medium", 3, true, "../animal images/dog2.jpg", "Retriever", "Yes");
-new Dog("Russel", "male", "small", 3, false, "../animal images/dog3.jpg", "Pug", "No");
+new Dog("Panther", "male", "medium", 3, true, "./animalimages/dog1.jpg", "Terrier", "Yes");
+new Dog("Howdy", "male", "medium", 3, true, "./animalimages/dog2.jpg", "Retriever", "Yes");
+new Dog("Russel", "male", "small", 3, false, "./animalimages/dog3.jpg", "Pug", "No");
 console.table(dogs);
-const vacBtn = document.getElementsByClassName("btn-vaccine");
+const vacBtn = document.getElementsByClassName("btnVaccine");
 function printCards() {
     document.getElementById("animalcont").innerHTML = "";
     for (let each of animal) {
         document.getElementById("animalcont").innerHTML += each.displayInfo();
     }
 }
+;
 printCards();
-// for(let cat of Cats){
-//     (document.getElementById("animalcont") as HTMLElement).innerHTML += cat.displayInfo()
-// }
-// for(let dog of dogs){
+function VaccineBtn() {
+    for (let i = 0; i < vacBtn.length; i++) {
+        if (animal[i].vaccine == true) {
+            document.getElementsByClassName("divbtn")[i].innerHTML =
+                `<button type="button"class="btn w-100 rounded-5 btnVaccine btn-success" >Vaccine: <i class="bi bi-clipboard-check-fill"></i></button>`;
+        }
+        else if (animal[i].vaccine == false) {
+            document.getElementsByClassName("divbtn")[i].innerHTML =
+                `<button type="button" class="btn w-100 rounded-5 btnVaccine btn-danger" >Vaccine: <i class="bi bi-exclamation-octagon"></i></button>`;
+        }
+        ;
+    }
+    ;
+    vacChan();
+}
+;
+VaccineBtn();
+function vacChan() {
+    for (let i = 0; i < vacBtn.length; i++) {
+        vacBtn[i].addEventListener("click", function () {
+            animal[i].vaccine = !animal[i].vaccine;
+            VaccineBtn();
+        });
+    }
+}
+;
+// for(let dogs of dogs){
 //     (document.getElementById("animalcont") as HTMLElement).innerHTML += dog.displayInfo()
 // }
 // new Dog(1, "Rowdy", "male","medium", 3, "<i class='bi bi-shield-fill-x'></i>", "dog1.jpg", "cooldog", false);
 // new Dog(2, "Fred", "male","small", 1, "<i class='bi bi-shield-check'></i>", "dog2.jpg", "housedog", true);
 // new Dog(3, "Jasmin", "female","large", 2, "<i class='bi bi-shield-fill-x'></i>", "dog3.jpg", "pug", false);
-// constructor(id:number, name:string, gender:string, height:string, age:number, vaccine:string, image:string,){
-//     this.id = id;
-//     this.name = name;
-//     this.gender = gender;
-//     this.height = height;
-//     this.age = age;
-//     this.vaccine = vaccine;
-//     this.image = image;
-// }
-// displayInfo(){
-//     return `
-//     <div class="card" style="width:250px">
-//         <img class="card-img-top" src="${this.image}">
-//         <div class="card-body">
-//           <h4 class="card-title">Name:${this.name}</h4>
-//           <p class="card-text">Gender ${this.gender}</p>
-//           <p class="card-text">height ${this.height}</p>
-//           <p class="card-text">Age:${this.age}</p>
-//           <button id="${this.id}" onclick="vaccine(${this.id})" class="btn-vaccine" >Vaccine: ${this.vaccine}</button>
-//         </div>
-//       </div> 
-//   </div>`
-// }
