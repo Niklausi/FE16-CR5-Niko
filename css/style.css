@@ -6,19 +6,23 @@
     width: 80px;
     height: 100%;
 }
+/* hero */
 .hero {
-    height: 450px;
-    background-image: url(https://images.unsplash.com/photo-1581171383994-afd540b6a4da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2F0JTIwYW5kJTIwZG9nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60);
+    height: 400px;
+    background-image: url("../animalimages/cat.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
 
 }
+/* Cardsection */
 .gettoknow {
+    padding: 20px;
     text-align: center;
     font-weight: bold;
     font-size: larger;
     font-family: 'Happy Monkey', cursive;
+    text-decoration: underline green;
 }
 .icons {
     background-color: rgb(153,192,212);
@@ -35,6 +39,7 @@
 }
 .card {
     font-family: 'Times New Roman', Times, serif;
+    
 }
 .copyr {
     background-color: rgb(75,149,186);

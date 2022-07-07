@@ -12,7 +12,7 @@ class Animal {
     displayInfo() {
         return `
         <div class="col-12 col-md-6 col-lg-4 d-flex mb-3 mt-3 justify-content-center">
-        <div class="card">
+        <div class="card" style="width: 18rem;">
             <img class="card-img-top img-cover cardimage" src="${this.image}">
             <div class="card-body">
               <h4 class="card-title">Name: ${this.name}</h4>
@@ -42,7 +42,7 @@ class Cat extends Animal {
     displayInfo() {
         return `
         <div class="col-12 col-md-6 col-lg-4 d-flex mb-3 mt-3 justify-content-center">
-        <div class="card">
+        <div class="card" style="width: 18rem";>
             <img class="card-img-top" src=" ${this.image}">
             <div class="card-body">
               <h4 class="card-title">Name: ${this.name}</h4>
@@ -74,7 +74,7 @@ class Dog extends Animal {
     displayInfo() {
         return `
         <div class="col-12 col-md-6 col-lg-4 d-flex mb-3 mt-3 justify-content-center">
-        <div class="card">
+        <div class="card" style="width: 18rem";>
             <img class="card-img-top" src="${this.image}">
             <div class="card-body">
               <h4 class="card-title">Name:${this.name}</h4>
